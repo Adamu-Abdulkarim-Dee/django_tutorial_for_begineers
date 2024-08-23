@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete MyModel Object</title>
+</head>
+<body>
+    <h1>Delete MyModel Object</h1>
+    {% if object_instance %}
+        <p>Are you sure you want to delete the object "{{ object_instance.name }}"?</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">Yes, Delete</button>
+        </form>
+    {% else %}
+        <p>No object found with this ID.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>Your Profiles</h1>
+    {% for profile in profiles %}
+        <div>
+            <h2>{{ profile.full_name }}</h2>
+            <img src="{{ profile.avatar.url }}" alt="Profile Picture">
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Address:</strong> {{ profile.address }}</p>
+            <p><strong>City:</strong> {{ profile.city }}</p>
+            <p><strong>State:</strong> {{ profile.state }}</p>
+            <p><strong>Hobbies:</strong> {{ profile.hobbies }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>

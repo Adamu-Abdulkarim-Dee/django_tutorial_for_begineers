@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View MyModel Object</title>
+</head>
+<body>
+    <h1>View MyModel Object</h1>
+    {% if object_instance %}
+        <p>Name: {{ object_instance.name }}</p>
+        <p>Age: {{ object_instance.age }}</p>
+        <p>Email: {{ object_instance.email }}</p>
+        <p>First Name: {{ object_instance.first_name }}</p>
+        <p>Last Name: {{ object_instance.last_name }}</p>
+
+        <!-- Link to Update Object -->
+        <a href="{% url 'update_object' object_instance.id %}">Update Object</a><br>
+
+        <!-- Link to Delete Object -->
+        <a href="{% url 'delete_object' object_instance.id %}">Delete Object</a><br>
+    {% else %}
+        <p>No object found with this ID.</p>
+    {% endif %}
+</body>
+</html>

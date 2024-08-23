@@ -1,0 +1,10 @@
+<h1>List of MyModel Objects</h1>
+{% for post in posts %}
+    <div>
+        <h2>{{ post.name }}</h2>
+        <p>Age: {{ post.age }}</p>
+        <p>Created At: {{ post.created_at|date:"F j, Y, g:i a" }}</p>
+    </div>
+{% empty %}
+    <p>No records found.</p>
+{% endfor %}
